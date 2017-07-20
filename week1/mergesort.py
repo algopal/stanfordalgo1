@@ -15,18 +15,20 @@ def mergesort(alist):
   i = j = k = 0
   
   while k < len(alist):
-    if i == len(left_sorted) - 1:
+    if i < len(left_sorted) and j < len(right_sorted):
+      if left_sorted[i] < right_sorted[j]:
+        alist[k] = left_sorted[i]
+        i += 1
+      else:
+        alist[k] = right_sorted[j]
+        j += 1
+    elif i == len(left_sorted) - 1 and j < len(right_sorted):
       alist[k] = right_sorted[j]
       j += 1
-    if j == len(right_sorted) - 1:
+    elif j == len(right_sorted) - 1 and i < len(left_sorted):
       alist[k] = left_sorted[i]
       i += 1
-    if left_sorted[i] < right_sorted[j]:
-      alist[k] = left_sorted[i]
-      i += 1
-    else:
-      alist[k] = right_sorted[j]
-      j += 1
+
     k += 1
   
   return alist
