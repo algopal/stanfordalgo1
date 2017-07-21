@@ -33,3 +33,8 @@ def mult(a,b):
   term4 = arbr
   
   return term1 + term2 + term3 + term4
+
+num1, num2 = raw_input().split(' ')
+digits1 = arithdigits(int(num1))
+digits2 = arithdigits(int(num2))
+print mult(digits1, digits2)
