@@ -12,8 +12,10 @@ def arithdigits(num):
 
 def mult(a,b):
   # a and b are two lists of digits, same length
-  if len(a) == 1:
+  if len(a) == 1 and len(b) == 1:
     return a[0]*b[0]
+  if len(a) == 0 or len(b) == 0:
+    return 0
   
   l = len(a)
   mid = l/2
